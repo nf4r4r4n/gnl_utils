@@ -8,5 +8,5 @@ int	main(void)
 	char	*chr = ft_strchr("Bonjour le monde", 'o');
 	printf("%s", join);
 	printf("%s\n", chr);
-	free_all_allocated(1, join);
+	free_all_allocated(2, join, chr);
 }

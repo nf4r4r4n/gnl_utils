@@ -19,4 +19,10 @@ clean:
 
 re: fclean all
 
-.PHONY: all fclean clean re
+run:
+	make all
+	make clean
+	cc -Wall -Wextra -Werror test.c memory/memory.a get_next_line.a -o test.out
+	valgrind --track-origins=yes --leak-check=full --leak-resolution=high --xtree-leak=yes --quiet ./test.out
+
+.PHONY: all fclean clean re run
